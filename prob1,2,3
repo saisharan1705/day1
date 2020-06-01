@@ -60,3 +60,29 @@ int main() {
 
 problem:3
 
+
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* smallerNumbersThanCurrent(int* nums, int numsSize, int* returnSize){
+  *returnSize=numsSize;
+    int i,j,k;
+    int* count=malloc(sizeof(int)*numsSize);
+    for(i=0;i<numsSize;i++)
+    {
+        k=nums[i];
+        count[i]=0;
+        for(j=0;j<numsSize;j++)
+        {
+            if(k==nums[j])
+            {
+                continue;
+            }
+            else if(k>nums[j])
+            {count[i]++;}
+        }
+        
+    }
+    return count;
+}
