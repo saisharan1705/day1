@@ -1,4 +1,4 @@
-
+problem :1
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().
@@ -22,3 +22,41 @@ int* twoSum(int* numbers, int numbersSize, int target, int* returnSize){
 return return_array;
 }
     
+problem :2
+
+#include <stdio.h>
+
+int main() {
+	int t,i,k,l,j;
+	scanf("%d",&t);
+	for(i=0;i<t;i++)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    int a[n-1];
+	    for(j=0;j<n-1;j++)
+	    {
+	        scanf("%d",&a[j]);
+	    }
+	    for(k=1;k<=n;k++)
+	    {
+	        int flag=0;
+	        for(l=0;l<n-1;l++)
+	        {
+	            if(k==a[l])
+	            {
+	                flag=1;
+	                break;
+	            }
+	        }
+	        if(flag==0)
+	        {
+	            printf("%d ",k);
+	        }
+	    }
+	    printf("\n");
+	}
+}
+
+problem:3
+
