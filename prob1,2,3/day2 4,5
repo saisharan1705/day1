@@ -148,7 +148,7 @@ int countNegatives(int** grid, int gridSize, int* gridColSize)
 
 day 3
 
-problem:1
+problem:6
 
 #include <stdio.h>
 
