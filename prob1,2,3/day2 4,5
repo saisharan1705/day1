@@ -146,3 +146,48 @@ int countNegatives(int** grid, int gridSize, int* gridColSize)
     return count;
 }
 
+day 3
+
+problem:1
+
+#include <stdio.h>
+
+int main() {
+	//code
+	int t,i,j,k,l;
+	scanf("%d",&t);
+	for(i=0;i<t;i++)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    int a[n+2],nu[2],e[2];
+	    int q=0;
+	    for(j=0;j<n+2;j++)
+	    {
+	        scanf("%d",&a[j]);
+	    }
+	    for(l=0;l<n+2;l++)
+	    {
+	        for(k=l+1;k<n+2;k++)
+	        {
+	            if(a[l]==a[k])
+	            {
+	                nu[q]=a[l];
+	                e[q]=k;
+	                q++;
+	            }
+	        }
+	    }
+	    if(e[0]<e[1])
+	    {
+	        printf("%d %d",nu[0],nu[1]);
+	    }
+	    else
+	    {
+	        printf("%d %d",nu[1],nu[0]);
+	    }
+	    printf("\n");
+	}
+	return 0;
+}
+
