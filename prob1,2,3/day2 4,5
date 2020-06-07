@@ -191,3 +191,50 @@ int main() {
 	return 0;
 }
 
+problem 9:
+
+
+int findLucky(int* arr, int arrSize)
+{
+    int i,j,q=1,temp;
+    int count[arrSize],b[arrSize];
+    b[0]=-1;
+    for(i=0;i<arrSize;i++)
+    {
+        count[i]=1;
+        if(arr[i]>0)
+        {
+            for(j=i+1;j<arrSize;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    count[i]++;
+                    arr[j]=0;
+                }
+            }
+        }
+        if(count[i]==arr[i]){
+        b[q]=arr[i];
+        q++;}
+    }
+    for(i=0;i<q;i++)
+    {
+        for(j=i+1;j<q;j++)
+        {
+            if(b[i]<b[j])
+            {
+                temp=b[i];
+                b[i]=b[j];
+                b[j]=temp;
+            }
+        }
+    }
+    if(b[0]>0)
+    {
+        return b[0];
+        
+    }
+    else{b[0]=-1;}
+    
+    return b[0];
+}
